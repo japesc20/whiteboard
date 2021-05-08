@@ -1,7 +1,9 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -9,9 +11,15 @@ body {
 }
 
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100vh;
 }
@@ -24,29 +32,38 @@ body {
   border: 10px solid #cccbcb;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: inset -1px 2px 2px #404040, 6px 9px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset -1px 2px 2px #404040, 6px 9px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset -1px 2px 2px #404040, 6px 9px 1px rgba(0, 0, 0, 0.1);
 }
 
 .top {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   margin-top: 10px;
 }
+
 .top h1 {
   width: 33%;
   color: #919191;
   font-size: 5rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .top h2 {
   width: 33%;
   font-size: 1rem;
 }
+
 .top h3 {
   width: 33%;
 }
+
 .top input {
   font-size: 1.3rem;
   outline: none;
@@ -57,34 +74,172 @@ body {
 
 .mid {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   margin-top: 100px;
+  /* Keep below all other styles (mid) */
 }
+
 .mid h3 {
   margin-top: 50px;
 }
+
 .mid p {
   margin-top: 20px;
 }
+
 .mid input {
   margin-top: 30px;
   font-size: 1rem;
 }
+
+.mid .js-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
 .mid .js-todo-input {
-  width: 20%;
-  margin-top: 50px;
   outline: none;
   border-width: 0 0 1px;
+  width: 20%;
 }
+
 .mid .input-btn {
   padding: 2px 10px 2px 10px;
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 3px;
+  width: 10%;
+}
+
+.mid .js-todo-list {
+  min-width: 300px;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.mid .done span {
+  text-decoration: line-through;
+}
+
+.mid input[type='checkbox'] {
+  display: none;
+}
+
+.mid .todo-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mid .tick {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.mid .tick::before {
+  content: '✓';
+  font-size: 15px;
+  display: none;
+}
+
+.mid .done .tick::before {
+  display: inline;
+}
+
+.mid .checkbox {
+  margin-right: 50px;
+}
+
+.mid .delete-todo {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.mid .delete-todo svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.mid .empty-state {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+
+.mid .checklist-icon {
+  margin-bottom: 20px;
+}
+
+.mid .empty-state__title,
+.mid .empty-state__description {
+  margin-bottom: 20px;
+}
+
+.mid .todo-list:empty {
+  display: none;
+}
+
+.mid .todo-list:empty + .empty-state {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .red-marker {
@@ -120,5 +275,4 @@ body {
   border-radius: 5px 5px 0 0;
   border-bottom: 6px solid grey;
 }
-
 /*# sourceMappingURL=style.css.map */
