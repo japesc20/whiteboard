@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    
 $bgcolor: #859b7e
 $wb-color: #ffffff
 $wb-border: #cccbcb
@@ -27,9 +29,9 @@ body
 
 .whiteboard
     background-color: $wb-color
-    position: relative
+    position: absolute
     width: 80%
-    height: 80%
+    min-height: 80%
     border: 10px solid $wb-border
     border-radius: 10px
     overflow: hidden
@@ -74,6 +76,9 @@ body
     input
         margin-top: 30px
         font-size: 1rem
+    ul
+        font-size: 2rem
+        font-family: 'Permanent Marker'
 
     .js-form
         display: flex
